@@ -1,0 +1,53 @@
+Untuk menjalankan proyek, pastikan untuk menyesuaikan lingkungan (environment) yang diperlukan sesuai dengan basis data yang telah kamu buat.
+
+Cara menjalankan API:
+
+    1. Buka Terminal dan arahkan ke dalam direktori proyek.
+    2. Jika sudah berada di dalam direktori proyek, ketik perintah: `go run main.go`.
+
+Untuk menjalankan pengujian menggunakan Postman:
+
+    1. Buka Postman.
+    2. Buat Koleksi (Collection) baru.
+    3. Tambahkan lingkungan (environment) pada ruang kerja dengan nama "Url" dan nilainya: `http://localhost:8080`.
+    4. Buat permintaan (request) Add, Get, Update, dan Delete:
+        A. Untuk menambah data, gunakan Metode Post dan URL: `http://localhost:8080/orders`. Jika sudah menambahkan lingkungan, gunakan: `{{url}}/orders`.
+            Contoh Badan Permintaan (Request Body):
+            ```json
+            { 
+                "orderedAt": "2019-11-09T21:21:46+00:00",
+                "customerName" : "Doli Rohman",
+                "items":[
+                    {
+                        "itemCode":"123",
+                        "description": "Samsung A32",
+                        "quantity": 1
+                    }
+                ]
+            }
+            ```
+
+        B. Untuk mendapatkan data, gunakan Metode Get dan URL: `http://localhost:8080/orders`. Jika sudah menambahkan lingkungan, gunakan: `{{url}}/orders`.
+        
+        C. Untuk memperbarui data, gunakan Metode Put dan URL: `http://localhost:8080/orders/{{orderId}}`. Jika sudah menambahkan lingkungan, gunakan: `{{url}}/orders/{{orderId}}`.
+            Contoh Badan Permintaan (Request Body):
+            ```json
+            { 
+                "customerName" : "Alif Khadafi",
+                "orderedAt": "2019-11-09T21:21:46+00:00",
+                "items":[
+                    {
+                        "lineItemId":1,
+                        "itemCode":"123",
+                        "description": "Samsung A32",
+                        "quantity": 12
+                    }
+                ]
+            }
+            ```
+
+        D. Untuk menghapus data, gunakan Metode Delete dan URL: `http://localhost:8080/orders/{{orderId}}`. Jika sudah menambahkan lingkungan, gunakan: `{{url}}/orders/{{orderId}}`.
+    
+
+    
+    * `{{orderId}}` = ID dari data Order, contoh = 1.
