@@ -51,3 +51,7 @@ Untuk menjalankan pengujian menggunakan Postman:
 
     
     * `{{orderId}}` = ID dari data Order, contoh = 1.
+
+
+untuk Kode Lengkapnya bisa dilihat di:
+https://github.com/Bagussurya12/Assigment2-Kominfo-h8-Go
